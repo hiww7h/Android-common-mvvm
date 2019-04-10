@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="itemModel"
+            type="com.ww7h.common.test.m.TestModel"/>
+        <variable
+            name="itemClickListener"
+            type="com.ww7h.ww.common.listeners.OnRecyclerItemClick"/>
+    </data>
+
+    <RelativeLayout
+        android:onClick="@{() -> itemClickListener.onItemClick(itemModel)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/test_image_iv"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:contentDescription="@{itemModel.contentDescription}" />
+
+        <TextView
+            android:text="@{itemModel.name}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{itemModel.information}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</layout>
