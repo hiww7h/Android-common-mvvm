@@ -9,7 +9,8 @@ import com.bumptech.glide.Glide;
 import com.ww7h.common.mvvm.R;
 import com.ww7h.common.mvvm.databinding.ItemTestBinding;
 import com.ww7h.common.test.m.TestModel;
-import com.ww7h.ww.common.bases.view.recyclerview.adapters.RecyclerViewAdapter;
+import com.ww7h.common.test.m.TestModelImpl;
+import com.ww7h.ww.common.bases.view.recyclerview.adapters.BaseRecyclerViewAdapter;
 import com.ww7h.ww.common.bases.view.recyclerview.adapters.RecyclerViewHolder;
 import com.ww7h.ww.common.listeners.OnRecyclerItemClick;
 
@@ -26,17 +27,17 @@ import org.jetbrains.annotations.NotNull;
  * @author ww  Github地址：https://github.com/ww7hcom
  * ================================================
  */
-public class TestAdapter extends RecyclerViewAdapter<TestAdapter.TestViewHolder, TestModel> {
+public class TestAdapter extends BaseRecyclerViewAdapter<TestAdapter.TestViewHolder, TestModelImpl> {
 
     private OnRecyclerItemClick<TestModel> itemClickListener;
 
     @Override
-    protected boolean areContentsTheSame(TestModel testModel, TestModel t1) {
+    protected boolean areContentsTheSame(TestModelImpl testModel, TestModelImpl t1) {
         return testModel.getId().equals(t1.getId());
     }
 
     @Override
-    protected boolean areItemsTheSame(TestModel testModel, TestModel t1) {
+    protected boolean areItemsTheSame(TestModelImpl testModel, TestModelImpl t1) {
         return testModel.getId().equals(t1.getId())
                 || testModel.getImagePath().equals(t1.getImagePath())
                 || testModel.getName().equals(t1.getName())
