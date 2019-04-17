@@ -1,11 +1,18 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.ww7hcom'
 
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
 
     defaultConfig {
-        applicationId "com.ww7h.common.mvvm"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -23,6 +30,31 @@ android {
     }
 }
 
+// 指定编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+// 打包源码
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.compile
+}
+// 制作文档(Javadoc)
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation ('com.android.support:appcompat-v7:28.0.0')
@@ -32,6 +64,6 @@ dependencies {
         exclude group: 'com.android.support'
     }
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.github.ww7hcom:Android-common:1.0.16'
+    implementation 'com.github.ww7hcom:Android-common:1.0.17'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 }

@@ -1,5 +1,7 @@
 package com.ww7h.common.test.m;
 
+import com.ww7h.common.mvvm.m.BaseM;
+
 /**
  * ================================================
  * 描述：
@@ -11,7 +13,7 @@ package com.ww7h.common.test.m;
  * @author ww  Github地址：https://github.com/ww7hcom
  * ================================================
  */
-public interface TestModel {
+public interface TestModel extends BaseM {
 
     /**
      * 获取图片说明文字

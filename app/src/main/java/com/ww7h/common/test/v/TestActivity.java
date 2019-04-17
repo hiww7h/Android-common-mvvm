@@ -1,7 +1,5 @@
 package com.ww7h.common.test.v;
 
-import android.databinding.DataBindingUtil;
-
 import com.ww7h.common.mvvm.R;
 import com.ww7h.common.mvvm.databinding.ActivityTestBinding;
 import com.ww7h.common.mvvm.v.BaseVActivity;
