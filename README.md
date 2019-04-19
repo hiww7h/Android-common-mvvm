@@ -18,11 +18,16 @@ MVVM可以算是MVP的升级版，将Presenter改名为ViewModel。关键在于V
 
 ### MVVM 使用到的库
 
-1、[Android官方架构组件Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle)
+1、Android官方架构组件Lifecycle [官方文档](https://developer.android.com/topic/libraries/architecture/lifecycle)
+
 2、Android官方架构组件ViewModel
+
 3、Android官方架构组件LiveData
+
 4、Android官方架构组件Paging
+
 5、Android官方架构组件Navigation
+
 6、Android官方架构组件Data
 
 ## MVVM 实现
