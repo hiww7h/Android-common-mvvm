@@ -6,10 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ww7h.common.mvvm.R;
-import com.ww7h.common.test.m.TestModel;
 import com.ww7h.ww.common.bases.fragment.BaseFragment;
-import com.ww7h.ww.common.listeners.OnRecyclerItemClick;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

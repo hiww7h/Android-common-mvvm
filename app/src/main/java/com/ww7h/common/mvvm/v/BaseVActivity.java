@@ -2,11 +2,8 @@ package com.ww7h.common.mvvm.v;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.os.Bundle;
 
 import com.ww7h.ww.common.bases.activity.BaseActivity;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * ================================================
