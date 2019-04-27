@@ -1,5 +1,7 @@
 package com.ww7h.common.mvvm.m;
 
+import android.databinding.BaseObservable;
+
 /**
  * ================================================
  * 描述：
@@ -11,7 +13,7 @@ package com.ww7h.common.mvvm.m;
  * @author ww  Github地址：https://github.com/ww7hcom
  * ================================================
  */
-public interface BaseM {
+public class BaseM extends BaseObservable {
 
 
 
